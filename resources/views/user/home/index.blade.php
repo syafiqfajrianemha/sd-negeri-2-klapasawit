@@ -80,9 +80,11 @@
                 <p class="text-center text-danger">Belum ada Berita.</p>
             @endforelse
         </div>
-        <div class="text-center mt-4">
-            <a href="" class="btn btn-success text-center text-white">Lihat Semua Berita</a>
-        </div>
+        @if ($berita->count() >= 1)
+            <div class="text-center mt-4">
+                <a href="" class="btn btn-success text-center text-white">Lihat Semua Berita</a>
+            </div>
+        @endif
     </div>
 </section>
 
