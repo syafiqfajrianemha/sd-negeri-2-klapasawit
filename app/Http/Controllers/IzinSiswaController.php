@@ -2,64 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IzinSiswa;
 use Illuminate\Http\Request;
 
 class IzinSiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('user.izin-siswa.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function kirim(Request $request)
     {
-        //
-    }
+        $nama = $request->nama;
+        $nis = $request->nis;
+        $kelas = $request->kelas;
+        $waliKelas = $request->wali_kelas;
+        $tanggal = $request->tanggal;
+        $alasan = $request->alasan;
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $noWa = '6285179923306';
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(IzinSiswa $izinSiswa)
-    {
-        //
-    }
+        $pesan = "Assalamu'alaikum, saya ingin memberi izin untuk siswa:\n\n"
+            . "Nama: $nama\n"
+            . "NIS: $nis\n"
+            . "Kelas: $kelas\n"
+            . "Wali Kelas: $waliKelas\n"
+            . "Tanggal Izin: $tanggal\n"
+            . "Alasan: $alasan\n\n"
+            . "Terima kasih.";
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(IzinSiswa $izinSiswa)
-    {
-        //
-    }
+        $waUrl = 'https://wa.me/' . $noWa . '?text=' . urlencode($pesan);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, IzinSiswa $izinSiswa)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(IzinSiswa $izinSiswa)
-    {
-        //
+        return redirect()->away($waUrl);
     }
 }

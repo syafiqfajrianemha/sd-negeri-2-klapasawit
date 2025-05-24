@@ -103,6 +103,6 @@ class GuruController extends Controller
     public function guest()
     {
         $guru = Guru::all();
-        return view('user.guru.index', compact('guru'));
+        return view('user.data.guru.index', compact('guru'));
     }
 }

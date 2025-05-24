@@ -32,8 +32,7 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h1 text-gray-900 font-weight-bold">Admin</h1>
-                                        <h6 class="h6 text-gray-900 mb-4 font-weight-bold">{{ config('app.name') }}</h6>
+                                        <h3 class="h3 text-gray-900 font-weight-bold mb-5">{{ config('app.name') }}</h3>
                                     </div>
                                     @if (session('error'))
                                         <div class="alert alert-danger">

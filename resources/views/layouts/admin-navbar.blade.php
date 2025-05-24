@@ -15,12 +15,12 @@
 
     <hr class="sidebar-divider my-0">
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="">
             <i class="fas fa-fw fa-users"></i>
             <span>Izin Siswa</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -36,6 +36,9 @@
                 <a class="collapse-item{{ Request::routeIs('kegiatan.index', 'kegiatan.*') ? ' active' : '' }}" href="{{ route('kegiatan.index') }}">Kegiatan</a>
                 <a class="collapse-item{{ Request::routeIs('visi-misi.index', 'visi-misi.*') ? ' active' : '' }}" href="{{ route('visi-misi.index') }}">Visi dan Misi</a>
                 <a class="collapse-item{{ Request::routeIs('guru.index', 'guru.*') ? ' active' : '' }}" href="{{ route('guru.index') }}">Data Guru</a>
+                <a class="collapse-item{{ Request::routeIs('alumni.index', 'alumni.*') ? ' active' : '' }}" href="{{ route('alumni.index') }}">Data Alumni</a>
+                <a class="collapse-item{{ Request::routeIs('prestasi.index', 'prestasi.*') ? ' active' : '' }}" href="{{ route('prestasi.index') }}">Prestasi</a>
+                <a class="collapse-item{{ Request::routeIs('ekstrakurikuler.index', 'ekstrakurikuler.*') ? ' active' : '' }}" href="{{ route('ekstrakurikuler.index') }}">Ekstrakurikuler</a>
             </div>
         </div>
     </li>

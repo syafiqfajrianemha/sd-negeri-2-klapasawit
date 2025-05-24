@@ -15,22 +15,24 @@
                         <li><a href="{{ route('guest.profil.struktur-komite') }}">Struktur Komite</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#" class="{{ Request::routeIs('guest.guru') ? 'active' : '' }}"><span>Data</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <li class="dropdown"><a href="#" class="{{ Request::routeIs('guest.guru', 'guest.alumni') ? 'active' : '' }}"><span>Data</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('guest.guru') }}">Guru</a></li>
-                        <li><a href="#">Alumni</a></li>
+                        <li><a href="{{ route('guest.alumni') }}">Alumni</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <li class="dropdown"><a href="#" class="{{ Request::routeIs('guest.prestasi', 'guest.ekstrakurikuler') ? 'active' : '' }}"><span>Informasi</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="#">Prestasi</a></li>
-                        <li><a href="#">Ekstrakurikuler</a></li>
+                        <li><a href="{{ route('guest.prestasi') }}">Prestasi</a></li>
+                        <li><a href="{{ route('guest.ekstrakurikuler') }}">Ekstrakurikuler</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('guest.berita') }}" class="{{ Request::routeIs('guest.berita', 'guest.berita.*') ? 'active' : '' }}">Berita</a></li>
                 <li><a href="{{ route('guest.kegiatan') }}" class="{{ Request::routeIs('guest.kegiatan') ? 'active' : '' }}">Kegiatan</a></li>
+                <li><a href="{{ route('guest.izin.siswa.index') }}" class="{{ Request::routeIs('guest.izin.siswa.index') ? 'active' : '' }}">Izin Siswa</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+        <a class="text-uppercase" href="{{ route('login') }}">MASUK</a>
     </div>
 </header>
